@@ -34,7 +34,7 @@ input:focus {
   background: rgb(204, 204, 204);
 }
 
-#enter {
+/* #enter {
   padding: 0.6rem;
   background: rgb(89, 139, 14);
   color: white;
@@ -42,11 +42,11 @@ input:focus {
 }
 #enter:hover {
   background: rgb(156, 255, 6);
-}
-ul {
+} */
+/* ul {
   width: 50%;
   margin: 0 auto;
-}
+} */
 ul li {
   list-style: georgian;
   color: rebeccapurple;

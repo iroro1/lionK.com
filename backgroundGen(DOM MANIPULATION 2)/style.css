@@ -8,14 +8,14 @@ body {
   background: linear-gradient(to right, red, yellow); /* Standard syntax */
 }
 
-h1 {
+/* h1 {
   font: 600 3.5em "Raleway", sans-serif;
   color: rgb(0, 0, 0);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5em;
   width: 100%;
-}
+} */
 
 h3 {
   font: 900 1em "Raleway", sans-serif;
