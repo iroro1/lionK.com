@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(to right, rgb(138, 7, 252), rgb(211, 16, 173));
+}
+/* #quote-box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgb(66, 63, 63);
+  border-radius: 1rem;
+}
+#text {
+  height: 50vh;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-family: cursive;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+}
+#author {
+  color: rgb(207, 186, 186);
+  font-size: 0.7rem;
+  text-align: right;
+  padding-top: 0.5rem;
+  margin: 0 auto;
+}
+#tweet-quote,
+#new-quote {
+  cursor: pointer;
+  color: white;
+  padding: 0.6rem;
+}
+#tweet-quote {
+  text-shadow: 2px 1px black;
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+} */
+/* #new-quote {
+  background: rgba(7, 189, 98, 0.856);
+  border-radius: 50%;
+  text-shadow: 2px 1px black;
+  font-size: 0.5rem;
+  display: flex;
+  align-items: center;
+} */
+#btn {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  padding: 1rem;
+}
+a {
+  text-decoration: none;
+}
