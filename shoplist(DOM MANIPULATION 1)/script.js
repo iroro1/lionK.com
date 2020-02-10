@@ -6,10 +6,9 @@ let rmbutton = document.querySelectorAll(".remove");
 let p = document.querySelector("#first");
 
 // load local Storage
-function loadList(e) {
+const loadList = e => {
   let list = localStorage.getItem("items");
   if (list === null || list === "[]") {
-    console.log("InValid");
     localStorage.setItem("items", "[]");
     p.textContent = "EMPTY LIST";
     p.setAttribute("class", "text-danger");
@@ -18,31 +17,31 @@ function loadList(e) {
     p.setAttribute("class", "text-success");
     JSON.parse(list).forEach(e => createListElement(e, "create"));
   }
-}
+};
 
-function listInValid(list) {
+const listInValid = list => {
   if (list === null && list === undefined && list === "" && list.length === 0) {
     return 0;
   } else {
     return 1;
   }
-}
-function inputLength() {
+};
+const inputLength = () => {
   return input.value.length;
-}
-function makeIt(val) {
+};
+const makeIt = val => {
   let li = document.createElement("li");
   let dbtn = document.createElement("button");
   let i = document.createElement("i");
-  // i.setAttribute("class", "fas fa-trash-alt");
-  dbtn.setAttribute("class", "remove btn");
-  dbtn.appendChild(i);
+  dbtn.setAttribute("class", "remove btn fas fa-trash-alt");
   li.appendChild(document.createTextNode(val));
   li.appendChild(dbtn);
   ul.appendChild(li);
   input.value = "";
-}
-function createListElement(val, wtd) {
+};
+const createListElement = (val, wtd) => {
+  p.textContent = "Get it done today";
+  p.setAttribute("class", "text-success");
   if (wtd === "create") {
     makeIt(val);
   } else {
@@ -50,20 +49,20 @@ function createListElement(val, wtd) {
     localStorage.setItem("items", JSON.stringify([...list, val]));
     makeIt(val);
   }
-}
-function addListAfterClick(e) {
+};
+const addListAfterClick = e => {
   if (inputLength() > 0) {
     // local storage
     createListElement(input.value);
   }
-}
-function addListAfterKeypress(event, v) {
+};
+const addListAfterKeypress = (event, v) => {
   if (inputLength() > 0 && event.keyCode === 13) {
     createListElement(input.value);
   }
-}
-function lisManipulation(e) {
-  if (e.target.className !== "remove btn") {
+};
+const lisManipulation = e => {
+  if (e.target.className !== "remove btn fas fa-trash-alt") {
     return e.target.classList.toggle("done"); //Mark item
   } else {
     // delete item
@@ -74,8 +73,12 @@ function lisManipulation(e) {
     console.log(val);
     let nlist = list.filter(e => e !== val);
     localStorage.setItem("items", JSON.stringify(nlist));
+    if (localStorage.getItem("items") === "[]") {
+      p.textContent = "EMPTY LIST";
+      p.setAttribute("class", "text-danger");
+    }
   }
-}
+};
 
 window.addEventListener("load", loadList);
 button.addEventListener("click", addListAfterClick);
