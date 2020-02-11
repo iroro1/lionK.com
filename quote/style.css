@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower|Sriracha&display=swap");
 body {
   background: linear-gradient(to right, rgb(138, 7, 252), rgb(211, 16, 173));
+  overflow: hidden;
 }
 
 .card-bg::before {
@@ -18,7 +19,7 @@ body {
   font-family: "Sriracha", cursive;
 }
 .main {
-  background: rgba(0, 0, 0, 0.534);
+  background: rgba(0, 0, 0, 0.637);
   height: 100vh;
 }
 
