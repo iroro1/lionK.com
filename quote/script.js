@@ -14,7 +14,7 @@ img.setAttribute(
   "https://i.ya-webdesign.com/images/transparent-welcome-gif-background-3.gif"
 );
 img.setAttribute("alt", "LOADING...");
-img.setAttribute("width", "200px");
+img.setAttribute("width", "100px");
 
 const api = async () => {
   let txt;
