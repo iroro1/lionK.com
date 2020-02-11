@@ -21,15 +21,12 @@ const i = [
   "https://images.unsplash.com/photo-1539373652309-19a2a53d45a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
   "https://images.unsplash.com/photo-1539362286735-21789f9187f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&auto=format&fit=crop&w=700&q=60",
   "https://images.unsplash.com/photo-1539200831626-cad7f58c765f?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
-  "https://images.unsplash.com/photo-1539023918645-8a5a85a822c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1539674301301-46518fda6008?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1515656155825-0a2ad654a360?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1500635523027-2f05e513f066?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
   "https://images.unsplash.com/photo-1519329475180-feddc4230aa6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
   "https://images.unsplash.com/photo-1513436158476-868ee8782fdd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
   "https://images.unsplash.com/photo-1534794067417-dce2680b2bb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
   "https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 ];
+
 body.style.height = "100vh";
 const changeBg = () => {
   const bg = rand(i);
