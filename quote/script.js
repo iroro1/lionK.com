@@ -7,14 +7,24 @@ const rand = d => {
   let rn = Math.floor(Math.random() * d.length);
   return rn;
 };
+
+img = document.createElement("img");
+img.setAttribute(
+  "src",
+  "https://i.ya-webdesign.com/images/transparent-welcome-gif-background-3.gif"
+);
+img.setAttribute("alt", "LOADING...");
+img.setAttribute("width", "200px");
+
 const api = async () => {
   let txt;
-  const data = await fetch(`https://type.fit/api/quotes`)
-    .then(res => res.json())
-    .then(data => data);
-  // console.log(data);
+  text.appendChild(img);
+
+  const data = await fetch(`https://type.fit/api/quotes`).then(res =>
+    res.json()
+  );
+
   if (data) {
-    console.log(data);
     let i = rand(data);
     text.textContent = data[i].text;
     author.textContent = data[i].author;
