@@ -2,12 +2,24 @@ let text = document.querySelector("#text");
 let author = document.querySelector("#author");
 let nextBtn = document.querySelector("#new-quote");
 let tweet = document.querySelector("#tweet-quote");
+let body = document.querySelector("body");
 
 const rand = d => {
   let rn = Math.floor(Math.random() * d.length);
   return rn;
 };
 
+const u = ["red", "blue", "green"];
+const changeBg = () => {
+  const bg = rand(u);
+  body.style.backgroundColor = u[bg];
+};
+const changeColor = () => {
+  const bg = rand(u);
+  body.style.color = u[bg];
+};
+
+br = document.createElement("br");
 img = document.createElement("img");
 img.setAttribute(
   "src",
@@ -18,8 +30,9 @@ img.setAttribute("width", "100px");
 
 const api = async () => {
   let txt;
+  changeColor();
+  text.appendChild(br);
   text.appendChild(img);
-
   const data = await fetch(`https://type.fit/api/quotes`).then(res =>
     res.json()
   );

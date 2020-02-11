@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Sriracha&display=swap");
 body {
   background: linear-gradient(to right, rgb(138, 7, 252), rgb(211, 16, 173));
+}
+
+#text {
+  font-family: "Indie Flower", cursive;
+}
+#author {
+  font-family: "Sriracha", cursive;
 }
