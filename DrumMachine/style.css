@@ -5,9 +5,8 @@
 }
 body {
   background: rgb(65, 13, 13);
-  font-family: monospace;
+  font-family: "Courier New", Courier, monospace;
   overflow: hidden;
-  margin: 0 auto;
 }
 
 h1 {
@@ -35,8 +34,67 @@ h1 {
   width: 30%;
 }
 #display {
-  background: #000;
+  background: rgba(0, 0, 0, 0.616);
   padding: 0.5rem;
   height: 2.5rem;
   max-width: 320px;
+}
+
+@media (max-width: 320px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  #drum-machine {
+    width: 320px;
+    background: #000;
+    display: flex;
+    z-index: 5;
+  }
+  #display {
+    background: rgba(0, 0, 0, 0.616);
+    padding: 0.2rem;
+    height: 3rem;
+    width: 280px;
+  }
+  .card {
+    background: rgba(0, 0, 0, 0.534);
+    width: 280px;
+  }
+  .foot {
+    width: 300px;
+  }
+  .drum-pad {
+    width: 30%;
+    padding: 0;
+  }
+}
+@media (max-width: 520px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  #drum-machine {
+    width: 320px;
+    background: #000;
+    display: flex;
+    z-index: 5;
+  }
+  #display {
+    background: rgba(0, 0, 0, 0.616);
+    padding: 0.2rem;
+    height: 3rem;
+    width: 280px;
+  }
+  .card {
+    background: rgba(0, 0, 0, 0.534);
+    width: 280px;
+  }
+  .foot {
+    width: 300px;
+  }
+  .drum-pad {
+    width: 30%;
+    padding: 0;
+  }
 }
