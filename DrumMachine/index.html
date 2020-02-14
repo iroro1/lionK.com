@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../quote/bootstrap-4.1.3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../quote/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Drum Machine</title>
+  </head>
+  <body>
+    <!-- Outer Wrapper -->
+    <div id="drum-machine">
+      <h1 class="text-center">
+        Drum Machine | <small class="h5">By Leo Ojigbo</small>
+      </h1>
+
+      <!--  -->
+      <div class="text-center text-light" id="display"></div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="card container my-1">
+            <div class=" card-body">
+              <div class="container ">
+                <div class="gb">
+                  <!-- Green -->
+                  <span class=" drum-pad btn btn-success p-3 m-1" id="q">
+                    Q
+                    <audio
+                      class="clip"
+                      id="Q"
+                      src="https://sampleswap.org/samples-ghost/DRUM%20LOOPS%20and%20BREAKS/000%20to%20080%20bpm/827[kb]050_barbituate-beat.wav.mp3"
+                    ></audio>
+                  </span>
+
+                  <span class=" drum-pad btn btn-success p-3  m-1" id="w">
+                    W
+                    <audio
+                      class="clip"
+                      id="W"
+                      src="https://sampleswap.org/samples-ghost/DRUM%20LOOPS%20and%20BREAKS/161%20to%20180%20bpm/513[kb]161_alien-fx-tone-beat.aif.mp3"
+                    ></audio>
+                  </span>
+
+                  <span class=" drum-pad btn btn-success p-3  m-1" id="e">
+                    E
+                    <audio
+                      class="clip"
+                      id="E"
+                      src="https://sampleswap.org/samples-ghost/DRUM%20LOOPS%20and%20BREAKS/161%20to%20180%20bpm/256[kb]161_soulpride.aif.mp3"
+                    ></audio>
+                  </span>
+                </div>
+                <!-- Red -->
+                <div class="rb">
+                  <span
+                    class="drum-pad btn btn-danger text-white p-3 col-md-4 m-1"
+                    id="a"
+                  >
+                    A
+                    <audio
+                      class="clip"
+                      id="A"
+                      src="https://sampleswap.org/samples-ghost/MELODIC%20LOOPS/GUITAR%20LOOPS/592[kb]070_fukdup_wah_guitar.aif.mp3"
+                    ></audio>
+                  </span>
+
+                  <span
+                    class="drum-pad btn btn-danger text-white p-3 col-md-4 m-1"
+                    id="s"
+                  >
+                    S
+                    <audio
+                      class="clip"
+                      id="S"
+                      src="https://sampleswap.org/samples-ghost/MELODIC%20LOOPS/GUITAR%20LOOPS/516[kb]080_country-boy-slide-guitar2.wav.mp3"
+                    ></audio>
+                  </span>
+
+                  <span
+                    class="drum-pad btn btn-danger text-white p-3 col-md-4 m-1"
+                    id="d"
+                  >
+                    D
+                    <audio
+                      class="clip"
+                      id="D"
+                      src="https://sampleswap.org/samples-ghost/MELODIC%20LOOPS/GUITAR%20LOOPS/459[kb]090_tight-wakka-tone-guitar-groove-3.wav.mp3"
+                    ></audio>
+                  </span>
+                </div>
+
+                <!-- Blue -->
+                  <div class="bb">
+                    <span
+                      class="drum-pad btn btn-primary p-3 col-md-4 m-1"
+                      id="z"
+                    >
+                      Z
+                      <audio
+                        class="clip"
+                        id="Z"
+                        src="https://sampleswap.org/samples-ghost/MELODIC%20LOOPS/SAMPLED%20MUSIC%20LOOPS/1494[kb]055_slow-ballad-guitar-strings.wav.mp3"
+                      ></audio>
+                    </span>
+                
+                    <span
+                      class="drum-pad btn btn-primary p-3 col-md-4 m-1"
+                      id="x"
+                    >
+                      X
+                      <audio
+                        class="clip"
+                        id="X"
+                        src="https://sampleswap.org/samples-ghost/MELODIC%20LOOPS/SAMPLED%20MUSIC%20LOOPS/537[kb]077_lofi-dub-groove.aif.mp3"
+                      ></audio>
+                    </span>
+                  
+                    <span
+                      class="drum-pad btn btn-primary p-3 col-md-4 m-1"
+                      id="c"
+                    >
+                      C
+                      <audio
+                        class="clip"
+                        id="C"
+                        src="https://sampleswap.org/samples-ghost/MELODIC%20LOOPS/SAMPLED%20MUSIC%20LOOPS/1949[kb]085_lofi-hiphop-bell-and-harp-beat.wav.mp3"
+                      ></audio>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+        <div class=" pt-3  p-2 text-white text-center mx-auto">
+          <p>
+            Copyright &copy; . Leo Ojigbo
+            <a href="https://www.linkedin.com/in/iroro1/" target="_blank"
+              ><i class=" fab fa-linkedin  ml-3"></i
+            ></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src=" https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <script src="../quote/bootstrap-4.1.3-dist/js/bootstrap.js"></script>
+    <script src="../quote/bootstrap-4.1.3-dist/jquery/jquery-3.3.1.js"></script>
+    <script src="../quote/bootstrap-4.1.3-dist/jquery/popper.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
