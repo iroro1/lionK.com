@@ -6,11 +6,19 @@
 }
 body {
   background: rgb(65, 64, 61);
+  height: 100vh;
+  overflow: hidden;
 }
 .btn {
   width: 22%;
   margin: 1px;
   padding: 1.2rem;
+}
+.foot {
+  margin: 0 auto;
+  background: #000;
+  /* position: fixed; */
+  bottom: 0;
 }
 #display {
   background: rgb(224, 224, 224);
