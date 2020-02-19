@@ -66,3 +66,34 @@ body {
 #author {
   font-family: "Sriracha", cursive;
 }
+
+@media (min-width: 1024px) {
+  .full {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  #display {
+    background: rgb(224, 224, 224);
+    color: #000;
+    padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+    margin: 2rem auto 0 auto;
+    height: 4rem;
+    width: 50%;
+    text-align: right;
+  }
+  .btgroup {
+    margin: 1rem 0 1rem 27%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #clear {
+    width: 90%;
+    margin: 0 10% 0 0;
+  }
+}

@@ -17,8 +17,6 @@ let clear = document.querySelector("#clear");
 let display = document.querySelector("#display");
 let equals = document.querySelector("#equals");
 
-let ans = 0;
-
 const calcOn = () => {
   display.textContent = 0;
 };
@@ -32,53 +30,39 @@ const maxlength = () => {
     return true;
   }
 };
-
-const calculateOps = (val, op) => {
-  let arrLen = val.length;
-  let addInd = val.indexOf(op);
-  let v1 = parseFloat(val.slice(0, addInd).join(""));
-  let v2 = parseFloat(val.slice(addInd + 1, arrLen).join(""));
-  if (op === "+") {
-    ans = (v1 + v2).toFixed(0);
-  } else if (op === "-") {
-    ans = (v1 - v2).toFixed(0);
-  } else if (op === "x") {
-    ans = (v1 * v2).toFixed(0);
-  } else if (op === "/") {
-    ans = (v1 / v2).toFixed(0);
+const calculate = () => {
+  let narr = [];
+  let screen = display.textContent.split("");
+  let temp = "";
+  screen.forEach((v, i) => {
+    if (v === "+" || v === "-" || v === "x" || v === "/") {
+      narr.push(temp, v);
+      temp = "";
+    } else {
+      temp += v;
+    }
+  });
+  narr.push(temp);
+  let ans = Number(narr[0]);
+  for (let i = 1; i < narr.length; i++) {
+    let v1 = 0;
+    if (i % 2 === 0) {
+      v1 = Number(narr[i]);
+      narr[i - 1] === "+"
+        ? (ans = ans + v1)
+        : narr[i - 1] === "-"
+        ? (ans = ans - v1)
+        : narr[i - 1] === "/"
+        ? (ans = ans / v1)
+        : (ans = ans * v1);
+    }
+  }
+  ans = String(ans);
+  if (ans.includes(".")) {
+    ans = parseFloat(ans);
+    ans = ans.toFixed(4);
   }
   display.textContent = ans;
-};
-
-const calculate = () => {
-  // let calc = [];
-  // let ans = 0,
-  //   temp = "";
-  // let val1 = display.textContent.split(/[^0-9]/);
-  // let val2 = display.textContent.split(/[0-9]/);
-  // console.log(val1);
-  // console.log(val2);
-  // let val = display.textContent.split("");
-  // val.forEach((e, i) => {
-  //   if (e === "+" || e === "-" || e === "x" || e === "/") {
-  //     calc.push(temp, e);
-  //     temp = "";
-  //   } else {
-  //     temp += e;
-  //   }
-  // });
-  // calc.push(temp); //Important
-  // console.log(calc, ":", temp);
-
-  if (val.includes("+")) {
-    calculateOps(val, "+");
-  } else if (val.includes("-")) {
-    calculateOps(val, "-");
-  } else if (val.includes("x")) {
-    calculateOps(val, "x");
-  } else if (val.includes("/")) {
-    calculateOps(val, "/");
-  }
 };
 const disp = e => {
   switch (e.target.getAttribute("id")) {
@@ -153,11 +137,7 @@ const disp = e => {
         : (display.textContent += "9");
       break;
     case "decimal":
-      maxlength() === true
-        ? null
-        : display.textContent.includes(".")
-        ? null
-        : (display.textContent += ".");
+      maxlength() === true ? null : (display.textContent += ".");
       break;
     case "add":
       maxlength() === true ? null : (display.textContent += "+");
