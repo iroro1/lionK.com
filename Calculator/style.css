@@ -9,6 +9,13 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+.bg {
+  background: rgb(46, 43, 59);
+  width: 90%;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 5px rgb(190, 168, 199);
+}
 .btn {
   width: 22%;
   margin: 1px;
@@ -16,18 +23,19 @@ body {
 }
 .foot {
   margin: 0 auto;
-  background: #000;
-  /* position: fixed; */
+  background: rgb(77, 74, 74);
+  border-radius: 1rem;
   bottom: 0;
 }
 #display {
   background: rgb(224, 224, 224);
   color: #000;
   padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
   font-size: 1.5rem;
   margin: 2rem auto 0 auto;
   height: 4rem;
-  width: 60%;
+  width: 70%;
   text-align: right;
 }
 #answer {
@@ -36,25 +44,25 @@ body {
 }
 #clear {
   width: 76%;
+  border-radius: 0.5rem;
 }
 #add,
 #subtract,
 #multiply,
 #divide {
   width: 22%;
-  background: #000;
+  background: rgb(58, 74, 165);
 }
 #add:hover,
 #subtract:hover,
 #multiply:hover,
 #divide:hover {
   width: 22%;
-  background: rgb(73, 70, 70);
+  background: rgb(25, 32, 73);
 }
 .btgroup {
   margin: 1rem auto;
   width: 320px;
-  /* background: rgb(219, 16, 16); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,7 +75,15 @@ body {
   font-family: "Sriracha", cursive;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
+  .bg {
+    background: rgb(46, 43, 59);
+    width: 70%;
+    padding: 1rem;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 5px rgb(190, 168, 199);
+  }
   .full {
     display: flex;
     flex-direction: column;
@@ -81,19 +97,18 @@ body {
     font-size: 1.5rem;
     margin: 2rem auto 0 auto;
     height: 4rem;
-    width: 50%;
+    width: 100%;
     text-align: right;
   }
   .btgroup {
-    margin: 1rem 0 1rem 27%;
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   #clear {
-    width: 90%;
-    margin: 0 10% 0 0;
+    width: 100%;
+    margin: 0 auto;
   }
 }
