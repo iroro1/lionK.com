@@ -52,13 +52,6 @@ const calculate = () => {
     let v1 = 0;
     if (i % 2 === 0) {
       v1 = Number(aArr[i]);
-      // aArr[i] === "+" && aArr[i] - 1 === "x"
-      //   ? aArr.slice(indexof(aArr[i] - 1))
-      //   : null;
-      // aArr[i] === "x" && aArr[i] - 1 === "+"
-      //   ? aArr.slice(indexof(aArr[i] - 1))
-      //   : null;
-
       aArr[i - 1] === "+"
         ? (ans = ans + v1)
         : aArr[i - 1] === "-"
@@ -66,6 +59,7 @@ const calculate = () => {
         : aArr[i - 1] === "/"
         ? (ans = ans / v1)
         : (ans = ans * v1);
+    } else if (!i % 2 === 0) {
     }
   }
   ans = String(ans);
@@ -159,8 +153,8 @@ const disp = e => {
       if (maxlength() === true) {
         return null;
       } else {
+        aArr.shift();
         for (let i = 0; i <= aArr.length; i++) {
-          // aArr.shift();
           if (i % 2 === 0) {
             if (aArr[i].includes(".")) {
               continue;
@@ -169,7 +163,7 @@ const disp = e => {
             }
           }
         }
-        // console.log(aArr);
+        console.log(aArr);
       }
 
       break;
