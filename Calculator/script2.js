@@ -18,7 +18,7 @@ let display = document.querySelector("#display");
 let equals = document.querySelector("#equals");
 
 const calcOn = () => {
-  display.textContent = 0;
+  display.textContent = "0";
 };
 const zerolength = () => {
   if (display.textContent.length === 1 && display.textContent === "0") {
@@ -30,11 +30,10 @@ const maxlength = () => {
     return true;
   }
 };
-const calculate = () => {
+const splitArr = arr => {
   let narr = [];
-  let screen = display.textContent.split("");
   let temp = "";
-  screen.forEach((v, i) => {
+  arr.forEach((v, i) => {
     if (v === "+" || v === "-" || v === "x" || v === "/") {
       narr.push(temp, v);
       temp = "";
@@ -43,28 +42,42 @@ const calculate = () => {
     }
   });
   narr.push(temp);
-  let ans = Number(narr[0]);
-  for (let i = 1; i < narr.length; i++) {
+  return narr;
+};
+const calculate = () => {
+  let screen = display.textContent.split("");
+  let aArr = splitArr(screen);
+  let ans = Number(aArr[0]);
+  for (let i = 1; i < aArr.length; i++) {
     let v1 = 0;
     if (i % 2 === 0) {
-      v1 = Number(narr[i]);
-      narr[i - 1] === "+"
+      v1 = Number(aArr[i]);
+      aArr[i - 1] === "+"
         ? (ans = ans + v1)
-        : narr[i - 1] === "-"
+        : aArr[i - 1] === "-"
         ? (ans = ans - v1)
-        : narr[i - 1] === "/"
+        : aArr[i - 1] === "/"
         ? (ans = ans / v1)
         : (ans = ans * v1);
+    } else if (!i % 2 === 0) {
     }
   }
   ans = String(ans);
-  if (ans.includes(".")) {
+  if (ans.includes(".") && ans.length > 4) {
     ans = parseFloat(ans);
     ans = ans.toFixed(4);
   }
   display.textContent = ans;
 };
 const disp = e => {
+  if (display.textContent.length === 1 && display.textContent === "0") {
+    display.textContent = e.target.value;
+  }
+  let screen = display.textContent.split("");
+  let aArr = splitArr(screen);
+  // aArr.shift();
+  // console.log(aArr);
+
   switch (e.target.getAttribute("id")) {
     case "zero":
       zerolength() === true
@@ -137,7 +150,22 @@ const disp = e => {
         : (display.textContent += "9");
       break;
     case "decimal":
-      maxlength() === true ? null : (display.textContent += ".");
+      if (maxlength() === true) {
+        return null;
+      } else {
+        for (let i = 0; i <= aArr.length; i++) {
+          // aArr.shift();
+          if (i % 2 === 0) {
+            if (aArr[i].includes(".")) {
+              continue;
+            } else {
+              display.textContent += ".";
+            }
+          }
+        }
+        console.log(aArr);
+      }
+
       break;
     case "add":
       maxlength() === true ? null : (display.textContent += "+");
@@ -154,8 +182,8 @@ const disp = e => {
     case "clear":
       display.textContent = 0;
       break;
-    // default:
-    //   display.textContent = 0;
+    default:
+      display.textContent = 0;
   }
 };
 

@@ -67,7 +67,7 @@ body {
   font-family: "Sriracha", cursive;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
   .full {
     display: flex;
     flex-direction: column;
