@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background: rgb(13, 36, 63);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20% auto;
+  color: aliceblue;
+}
+header {
+  font-size: 0.5rem;
+  margin: -3rem auto 0 auto;
+  text-align: center;
+}
+.bg {
+  width: 90%;
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.472);
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: 5%;
+}
+.ses-brk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#session-label,
+#break-label {
+  background: rgb(56, 53, 53);
+  color: aliceblue;
+  padding: 0.4rem;
+  border-radius: 5%;
+  margin: 0 3px;
+  font-size: 0.85rem;
+  padding: 0.5rem;
+}
+#session-length,
+#break-length {
+  padding: 1rem;
+  background: rgb(255, 255, 255);
+  color: black;
+  margin: 3px;
+  font-size: 3.5rem;
+  text-align: center;
+}
+.timer {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#timer-label {
+  margin: 0 auto;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+#time-left {
+  color: brown;
+  background: wheat;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  margin: 0.4rem auto;
+}
+.btn {
+  padding: 0.9rem;
+}
+.btngrp {
+  font-size: 1.6rem;
+  margin: auto;
+}
+.foot {
+  background: rgb(47, 45, 45);
+  color: aliceblue;
+  position: fixed;
+  top: 91%;
+  padding: 0.4rem;
+}
+
+@media (min-width: 350px) {
+  body {
+    background: #000;
+  }
+}
