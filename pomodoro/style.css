@@ -5,8 +5,6 @@
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
   background: rgb(13, 36, 63);
   display: flex;
   flex-direction: column;
@@ -17,7 +15,7 @@ body {
 }
 header {
   font-size: 0.5rem;
-  margin: -3rem auto 0 auto;
+  margin: -3.5rem auto 0 auto;
   text-align: center;
 }
 .bg {
@@ -25,7 +23,7 @@ header {
   max-width: 500px;
   background: rgba(0, 0, 0, 0.472);
   height: 100%;
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 5%;
 }
 .ses-brk {
@@ -33,9 +31,17 @@ header {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem;
 }
-
+.ses,
+.brk {
+  display: flex;
+  flex-direction: column;
+}
+.but {
+  display: flex;
+  justify-content: space-around;
+}
 #session-label,
 #break-label {
   background: rgb(56, 53, 53);
@@ -48,11 +54,11 @@ header {
 }
 #session-length,
 #break-length {
-  padding: 1rem;
-  background: rgb(255, 255, 255);
-  color: black;
+  padding: 0.1rem;
+  background: rgba(4, 77, 161, 0.589);
+  color: rgb(255, 255, 255);
   margin: 3px;
-  font-size: 3.5rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 .timer {
@@ -62,14 +68,14 @@ header {
 }
 #timer-label {
   margin: 0 auto;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
 }
 #time-left {
   color: brown;
   background: wheat;
-  font-size: 1.5rem;
-  padding: 0.5rem;
+  font-size: 3rem;
+  padding: 0.7rem;
   border-radius: 0.8rem;
   margin: 0.4rem auto;
 }
@@ -79,6 +85,8 @@ header {
 .btngrp {
   font-size: 1.6rem;
   margin: auto;
+  display: flex;
+  justify-content: space-around;
 }
 .foot {
   background: rgb(47, 45, 45);
@@ -88,8 +96,75 @@ header {
   padding: 0.4rem;
 }
 
-@media (min-width: 350px) {
+@media (min-width: 500px) {
+  header {
+    font-size: 8rem;
+    text-align: center;
+  }
+  .bg {
+    max-width: 800px;
+  }
+
+  #session-label,
+  #break-label {
+    padding: 0.7rem;
+    margin: 0 5px;
+    font-size: 1.8rem;
+  }
+  #session-length,
+  #break-length {
+    margin: 3px;
+    font-size: 2rem;
+  }
+
+  #timer-label {
+    font-size: 3rem;
+  }
+  #time-left {
+    color: brown;
+    background: wheat;
+    font-size: 5rem;
+  }
+  .btn {
+    padding: 1.2rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
   body {
-    background: #000;
+    margin: 10% auto;
+  }
+  header {
+    font-size: 8rem;
+    text-align: center;
+  }
+  .bg {
+    max-width: 1000px;
+  }
+
+  #session-label,
+  #break-label {
+    padding: 0.7rem;
+    margin: 0 5px;
+    font-size: 1.6rem;
+  }
+  #session-length,
+  #break-length {
+    margin: 3px;
+    font-size: 2rem;
+  }
+
+  #timer-label {
+    font-size: 2rem;
+  }
+  #time-left {
+    color: brown;
+    background: wheat;
+    font-size: 6.5rem;
+  }
+  .btn {
+    padding: 1.2rem;
+    margin-top: 1rem;
   }
 }

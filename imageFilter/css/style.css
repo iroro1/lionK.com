@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+#can {
+  border: 1px solid #000;
+  margin: 5% auto 1px auto;
+  height: 300px;
+  width: 300px;
+}
+#red {
+  background: rgb(231, 47, 47);
+  color: rgb(228, 212, 212);
+  border: none;
+  margin: 2px 0;
+}
+#orange {
+  background: rgb(226, 97, 11);
+  color: rgb(228, 212, 212);
+  border: none;
+  margin: 2px 0;
+}
+#gray {
+  background: rgb(138, 138, 138);
+  color: rgb(228, 212, 212);
+  border: none;
+  margin: 2px 0;
+}
+#green {
+  background: rgb(19, 241, 37);
+  color: rgb(228, 212, 212);
+  border: none;
+  margin: 2px 0;
+}
+#blue {
+  background: rgb(19, 97, 241);
+  color: rgb(228, 212, 212);
+  border: none;
+  margin: 2px 0;
+}
+#rainbow {
+  background: linear-gradient(
+    to left,
+    rgb(29, 39, 29),
+    rgba(176, 255, 30, 0.828)
+  );
+  color: rgb(228, 212, 212);
+  border: none;
+  margin: 2px 0;
+}
+#bborder {
+  color: rgb(255, 255, 255);
+  background: black;
+  border: none;
+  margin: 2px 0;
+}
+#blur {
+  background: linear-gradient(
+    to left,
+    rgb(176, 224, 176),
+    rgba(112, 133, 74, 0.828)
+  );
+  color: rgb(0, 0, 0);
+  border: none;
+  margin: 2px 0;
+}
+
+#cfil {
+  color: rgba(255, 87, 165, 0.828);
+}
