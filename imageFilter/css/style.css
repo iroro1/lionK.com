@@ -5,8 +5,17 @@
 }
 body {
   overflow-x: hidden;
+  font-family: "Segoe UI", Tahoma, "Geneva", Verdana, sans-serif;
 }
-#can {
+blockquote {
+  border-left: 5px solid rgb(197, 5, 133);
+  padding: 0.5rem;
+}
+#can,
+#canbg,
+#canfg,
+#canmain,
+#canhide {
   border: 1px solid #000;
   margin: 5% auto 1px auto;
   height: 300px;
@@ -19,12 +28,13 @@ body {
   margin: 2px 0;
 }
 #orange {
-  background: rgb(226, 97, 11);
+  background: rgb(226, 11, 119);
   color: rgb(228, 212, 212);
   border: none;
   margin: 2px 0;
 }
-#gray {
+#gray,
+#neg {
   background: rgb(138, 138, 138);
   color: rgb(228, 212, 212);
   border: none;
@@ -61,8 +71,8 @@ body {
 #blur {
   background: linear-gradient(
     to left,
-    rgb(176, 224, 176),
-    rgba(112, 133, 74, 0.828)
+    rgb(251, 255, 14),
+    rgba(255, 251, 18, 0.828)
   );
   color: rgb(0, 0, 0);
   border: none;

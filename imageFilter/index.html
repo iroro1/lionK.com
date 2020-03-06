@@ -13,19 +13,75 @@
   </head>
   <body>
     <div class="row bg-dark py-2">
-      <div class="text-white container text-center">
-        <h2>Image <span id="cfil">Filter</span> App</h2>
+      <div class="text-white container text-left">
+        <h2>
+          IMAGE <span id="cfil"><i class="fa fa-circle"></i></span> APP
+          <small class="small ml-3">| Leo Ojigbo</small>
+        </h2>
       </div>
     </div>
 
+    <!-- About -->
+    <div class="row  mt-4">
+      <div class=" container">
+        <div class="jumbotron">
+          <div class="row">
+            <div class="container">
+              <blockquote class=" ">
+                Please note. For Faster and better processing, crop images to less than or equal to 200px for height and width (200 <code>X</code> 200).
+              </blockquote>
+            </div>
+          </div>
+          <p>
+            This app is created using the Duke Learn to Program Js Library which adds a layer of abstraction to image processing.
+          </p>
+          <p>This app has 3 sections:
+            <ul class="list-group">
+              <li  class="list-group-item"><b>Filter:</b>
+                This app allows users to upload a picture and apply the color
+                filters to the picture. 
+              </li>
+              <li class="list-group-item"><b>Green Screen:</b>
+                This app allows users to upload 2 pictures and replace the green pixels from the foreground picture with pixels at same location in the background picture. 
+              </li>
+              <li class="list-group-item"><b>Steganography:</b>
+                This app allows users to upload a picture and extract the hidden data or upload two pictures and hide one in the other. 
+              </li>
+            </ul>
+            
+          </p>
+          <p>
+            This course has increased my interest in
+            image processing and i intend to make additional research in that
+            field as soon as possible.
+            My most interesting part is the Steganography  part . The idea of Steganography is to hide data in images using
+            simple Math. Utilising base 2 numbers or even decimals, you can hide
+            images under other images or even text under images.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!-- APPS -->
     <div class="row">
-      <div class="col-12 py-3 col-sm-6 container">
+      <div class="container">
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <h3 class=" container text-center border-bottom text-danger mt-2 pb-2">
+        IMAGE FILTER
+      </h3>
+    </div>
+    <div class="row ">
+      <div class="col-12 py-3 col-sm-5 mx-auto container">
         <div class="row container justify-content-center align-items-center">
-          <canvas class="ml-5 col-12" id="can"> </canvas>
+          <canvas class="ml-5 container col-10 mx-auto" id="can"> </canvas>
           <div class="row">
             <small class="small col-10 mx-auto container mt-2 pt-5">
               <i class="fas fa-info"></i> Upload Your Picture from the file
-              input below and apply the filters on the picture.
+              input below and apply the filters on the picture. After applying a
+              filter, Press the Upload to clear it and try another.
             </small>
           </div>
           <div class="container">
@@ -108,6 +164,13 @@
           <input
             class="py-4 mt-1 mx-1 col-3 col-sm-4"
             type="button"
+            value="Sepia"
+            onclick="neg()"
+            id="neg"
+          />
+          <input
+            class="py-4 mt-1 mx-1 col-3 col-sm-8"
+            type="button"
             value="Border"
             onclick="bborder()"
             id="bborder"
@@ -120,32 +183,173 @@
         <hr />
       </div>
     </div>
-    <div class="row mb-5">
-      <div class="container">
-        <h3>About</h3>
+    <!-- Green Screen -->
+
+    <div class="row">
+      <h3 class=" container text-center border-bottom text-success mt-2 pb-2">
+        GREEN SCREEN
+      </h3>
+    </div>
+    <div class="row">
+      <div class="col-12 py-3 col-sm-5 mx-auto container">
+        <div class="row container justify-content-center align-items-center">
+          <canvas class="ml-5 col-12" id="canfg"> </canvas>
+          <div class="row">
+            <small class="small col-10 mx-auto container mt-2 pt-5">
+              <i class="fas fa-info"></i> Upload Your Foreground Picture with
+              green Background.
+            </small>
+          </div>
+          <div class="container">
+            <div class="row mt-2 mx-auto">
+              <div class="col-12">
+                <input
+                  class="form-control  py-1 my-2"
+                  type="file"
+                  multiple="false"
+                  accept="Image/*"
+                  id="inpfg"
+                />
+                <b class="mt-2"
+                  ><span class="text-danger">*</span> Please be patient, it
+                  might take some time to get your output after hitting the
+                  "Replace" button.The speed would vary between devices.</b
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <!--  -->
+      <div class="col-12 py-3 col-sm-5 mx-auto container">
+        <div class="row container justify-content-center align-items-center">
+          <canvas class="ml-5 col-12" id="canbg"> </canvas>
+          <div class="row">
+            <small class="small col-10 mx-auto container mt-2 pt-5">
+              <i class="fas fa-info"></i> Upload Your Background Picture you
+              intend to replace the green screen with.
+            </small>
+          </div>
+          <div class="container">
+            <div class="row mt-2 mx-auto">
+              <div class="col-12">
+                <input
+                  class="form-control  py-1 mt-2"
+                  type="file"
+                  multiple="false"
+                  accept="Image/*"
+                  id="inpbg"
+                />
+              </div>
+              <div class="col-12">
+                <input
+                  class="btn btn-block btn-primary  mt-2"
+                  type="button"
+                  value="Upload"
+                  onclick="uploadGreen()"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  class="btn btn-block btn-success  mt-2"
+                  type="button"
+                  value="Replace"
+                  onclick="refine()"
+                />
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="container">
-        <p>
-          This app is created using the Duke Learn to Program Js Library from
-          the Programming foundations course.
-        </p>
-        <p>
-          This app allows users to upload a picture and apply the color filters
-          to the picture. This course has increased my interest in image
-          processing and i intend to make additional research in that field as
-          soon as possible.
-        </p>
-        <p>
-          I have learnt about the green screen problem, manipulating images and
-          most interestingly Steganography which was a part of the honours
-          program. The idea of Steganography is to hide data in images using
-          simple Math. Utilising base 2 numbers or even decimals, you can hide
-          images under other images or even text under images.
-        </p>
-        <p class="mb-5">
-          I hope i have been able to show through this little image processing
-          app and other apps on my portfolio what i can do as regards Coding.
-        </p>
+        <hr />
+      </div>
+    </div>
+    <!-- Steganography -->
+    <div class="row">
+      <h3 class=" container text-center border-bottom text-primary mt-2 pb-2">
+        STEGANOGRAPHY
+      </h3>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 py-3 col-sm-5 mx-auto container">
+        <div class="row container justify-content-center align-items-center">
+          <canvas class="ml-5 col-12" id="canmain"> </canvas>
+          <div class="row">
+            <small class="small col-10 mx-auto container mt-2 pt-5">
+              <i class="fas fa-info"></i> Upload Main Picture Picture.
+            </small>
+          </div>
+          <div class="container">
+            <div class="row mt-2 mx-auto">
+              <div class="col-12">
+                <input
+                  class="form-control  py-1 mt-2"
+                  type="file"
+                  multiple="false"
+                  accept="Image/*"
+                  id="inpmain"
+                />
+              </div>
+
+              <div class="col-12" id="image-dim"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 py-3 col-sm-5 mx-auto container">
+        <div class="row container justify-content-center align-items-center">
+          <canvas class="ml-5 col-12" id="canhide"> </canvas>
+          <div class="row">
+            <small class="small col-10 mx-auto container mt-2 pt-5">
+              <i class="fas fa-info"></i> Upload Picture to hide.
+            </small>
+          </div>
+          <div class="container">
+            <div class="row mt-2 mx-auto">
+              <div class="col-12">
+                <input
+                  class="form-control  py-1 mt-2"
+                  type="file"
+                  multiple="false"
+                  accept="Image/*"
+                  id="inphide"
+                />
+              </div>
+              <div class="col-12">
+                <input
+                  class="btn btn-block btn-primary  mt-2"
+                  type="button"
+                  value="Upload"
+                  onclick="uploadSteg()"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  class="btn btn-block btn-success  mt-2"
+                  type="button"
+                  value="Hide"
+                  onclick="hideProcess()"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  class="btn btn-block btn-warning  mt-2"
+                  type="button"
+                  value="Extract"
+                  onclick="extract()"
+                />
+              </div>
+              <div class="col-12" id="image-dim"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <footer class="row bg-dark ">
