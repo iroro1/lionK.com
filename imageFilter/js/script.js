@@ -446,7 +446,7 @@ const extract = () => {
   x = chop2extract(x);
   x = unShift(x);
   // x = setNew(x);
-  // let n = new SimpleImage(x);
+  let n = new SimpleImage(x);
   x.drawTo(canhide);
   // if (inpmain && !inphide) {
   //   console.log("extracting");
@@ -458,3 +458,13 @@ const extract = () => {
   //   inpmain.drawTo(canhide);
   // }
 };
+
+// let body = document.querySelector("body");
+// const loaded = () => {
+//   console.log("Loaded");
+//   // let fil = new SimpleImage("img/rc.png");
+
+//   // fil.drawTo(can);
+// };
+
+// window.addEventListener("onload", loaded);
