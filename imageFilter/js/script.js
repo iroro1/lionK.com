@@ -405,7 +405,6 @@ const hideProcess = () => {
   ctxHide.fillStyle = "white";
   ctxHide.fillRect(0, 0, 300, 300);
   // inphide.value = "";
-
   console.log("Done");
 };
 
@@ -414,9 +413,9 @@ const hideProcess = () => {
 // Chop bits
 const chop2extract = img => {
   for (let p of img.values()) {
-    p.setRed(Math.floor((p.getRed() % 16) * 16));
-    p.setGreen(Math.floor((p.getGreen() % 16) * 16));
-    p.setBlue(Math.floor((p.getBlue() % 16) * 16));
+    p.setRed(Math.floor(p.getRed() % 16) * 16);
+    p.setGreen(Math.floor(p.getGreen() % 16) * 16);
+    p.setBlue(Math.floor(p.getBlue() % 16) * 16);
   }
   return img;
 };
@@ -432,8 +431,9 @@ const unShift = img => {
 };
 // SetNew
 const setNew = img => {
+  let x = new SimpleImage(canmain);
   for (let p of img.values()) {
-    let z = canmain.getPixel(p.getX(), p.getY());
+    let z = x.getPixel(p.getX(), p.getY());
     p.setRed(z.getRed());
     p.setGreen(z.getGreen());
     p.setBlue(z.getBlue());
